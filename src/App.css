@@ -1,5 +1,6 @@
 .wrapper {
   padding: 20px;
+  height: 100vh;;
 }
 
 .Modal_overlay {
@@ -15,12 +16,12 @@
 .Modal {
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .Modal.isShow {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .Modal_container {
