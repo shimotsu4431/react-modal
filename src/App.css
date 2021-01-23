@@ -1,3 +1,41 @@
 .wrapper {
   padding: 20px;
 }
+
+.Modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.Modal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.Modal.isShow {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.Modal_container {
+  position: absolute;
+  z-index: 9999;
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Modal_container__title {
+  margin: 0;
+}

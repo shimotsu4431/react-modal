@@ -7,7 +7,6 @@
       "esnext"
     ],
     "noUnusedParameters": true,
-    "noUnusedLocals": true,
     "noImplicitReturns": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,7 +21,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src"
   },
   "include": [
     "src"
