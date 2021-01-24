@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { Member } from '../App'
 
 type Prop = {
@@ -14,6 +14,20 @@ const Modal: React.FC<Prop> = ({ isOpen, member, handleClose }) => {
   const handleClick = useCallback(() => {
     handleClose()
   }, [handleClose])
+
+  // Esc キーでモーダルを閉じる
+  const escFunction = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleClose()
+      }
+    },
+    [handleClose],
+  )
+
+  useEffect(() => {
+    document.addEventListener('keydown', escFunction, false)
+  }, [escFunction])
 
   return (
     <>
