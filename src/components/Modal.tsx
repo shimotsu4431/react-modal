@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useRef } from 'react'
+import { useLockBodyScroll } from 'react-use'
 import { Member } from '../App'
 
 type Prop = {
@@ -10,6 +11,7 @@ type Prop = {
 
 const Modal: React.FC<Prop> = ({ isOpen, member, handleClose }) => {
   const overlay = useRef<HTMLDivElement>(null)
+  useLockBodyScroll(isOpen)
 
   const handleClick = useCallback(() => {
     handleClose()
